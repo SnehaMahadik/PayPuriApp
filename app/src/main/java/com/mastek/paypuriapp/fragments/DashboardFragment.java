@@ -350,7 +350,7 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                VolleyLog.e("Error: ", error.getMessage());
+                VolleyLog.e("Error //: ", error.getCause());
             }
 
         }
@@ -370,6 +370,7 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
 
 
         RequestQueue requestQueue1 = Volley.newRequestQueue(getActivity());
+
         requestQueue1.add(req);
     }}
 
