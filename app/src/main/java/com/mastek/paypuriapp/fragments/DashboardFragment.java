@@ -223,10 +223,10 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
     @Override
     public void onResume() {
         super.onResume();
-        postJson();
+       // postJson();
         // Creating request and fetch Orders list
 
-       /* StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.2.176:8080//appUsers",
+       StringRequest stringRequest = new StringRequest(Request.Method.POST, " http://192.168.2.176:8080/upiproxy/getAccountBalance/12340987",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -246,10 +246,7 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
                 params.put("USERNAME","ganesh");
                 params.put("PASSWORD","ganesh");
 
-                params.put("email","");
-                params.put("mobileNumber","");
-                params.put("parentUsername","parent");
-                params.put("referralCode","");
+
 
 
 
@@ -263,8 +260,9 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
                 return headers;
             }
 
-        };*/
-
+        };
+        RequestQueue requestQueue1 = Volley.newRequestQueue(getActivity());
+        requestQueue1.add(stringRequest);
 
        /* StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.2.176:8080//appUsers",
                 new Response.Listener<String>() {
