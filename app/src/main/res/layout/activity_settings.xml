@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.mastek.paypuriapp.activity.SettingsActivity"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/MyMaterialTheme.Base.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/blue"
+            app:popupTheme="@style/MyMaterialTheme.Base.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!--<include layout="@layout/content_settings" />-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:padding="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personal info"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/textSizeMedium"
+                android:textStyle="bold"/>
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:mrl_rippleAlpha="0.1" >
+
+            <RelativeLayout
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile No"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeSmall"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9664167167"
+                    android:layout_toLeftOf="@+id/textViewMobileVerified"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeSmall"/>
+                <TextView
+                    android:id="@+id/textViewMobileVerified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="verified"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/textSizeSmall"/>
+            </RelativeLayout>
+            </com.balysv.materialripple.MaterialRippleLayout>
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:mrl_rippleAlpha="0.1" >
+            <RelativeLayout
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email Id"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeSmall"/>
+                <ImageView
+                    android:id="@+id/imageViewChnageEmailid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/textViewemailVerified"
+                    android:src="@drawable/ic_create_black_24dp"
+                    android:paddingRight="10dp"/>
+                <TextView
+                    android:id="@+id/textViewemailVerified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="verified"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/textSizeSmall"/>
+            </RelativeLayout>
+            </com.balysv.materialripple.MaterialRippleLayout>
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:mrl_rippleAlpha="0.1" >
+            <RelativeLayout
+                android:id="@+id/relchangePassword"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Change password"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeSmall"/>
+                <ImageView
+                    android:id="@+id/imageViewChangePassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_create_black_24dp"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+            </com.balysv.materialripple.MaterialRippleLayout>
+            <View
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:background="@android:color/darker_gray"
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                />
+
+            <TextView
+                android:padding="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/textSizeSmall"
+                android:textStyle="bold"/>
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:mrl_rippleAlpha="0.1" >
+
+            <RelativeLayout
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Application Lock"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeSmall"
+                    />
+                <!--<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="verified"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeSmall"/>-->
+            </RelativeLayout>
+            </com.balysv.materialripple.MaterialRippleLayout>
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:mrl_rippleAlpha="0.1" >
+            <RelativeLayout
+                android:id="@+id/relChangeMPIN"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chnage MPIN"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeSmall"/>
+                <!--<ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/textViewemailVerified"
+                    android:src="@drawable/ic_create_black_24dp"
+                    android:paddingRight="10dp"/>
+                <TextView
+                    android:id="@+id/textViewemailVerified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="verified"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeSmall"/>-->
+            </RelativeLayout>
+            </com.balysv.materialripple.MaterialRippleLayout>
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:mrl_rippleAlpha="0.1" >
+            <RelativeLayout
+                android:id="@+id/relBankPref"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bank Preferences"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeSmall"/>
+               <!-- <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_create_black_24dp"
+                    android:layout_alignParentRight="true" />-->
+
+            </RelativeLayout>
+            </com.balysv.materialripple.MaterialRippleLayout>
+            <View
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:background="@android:color/darker_gray"
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                />
+            <TextView
+                android:padding="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Security"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/textSizeSmall"
+                android:textStyle="bold"/>
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:mrl_rippleAlpha="0.1" >
+            <RelativeLayout
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show/hide account balance"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeSmall"
+                    />
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/Switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textOff=""
+                    android:background="@android:color/transparent"
+                    android:button="@null"
+                    android:layout_alignParentRight="true"
+                    />
+            </RelativeLayout>
+            </com.balysv.materialripple.MaterialRippleLayout>
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/ripple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:mrl_rippleAlpha="0.1" >
+            <RelativeLayout
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notifications"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textSizeSmall"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/Switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textOff=""
+                    android:background="@android:color/transparent"
+                    android:button="@null"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+
+</com.balysv.materialripple.MaterialRippleLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

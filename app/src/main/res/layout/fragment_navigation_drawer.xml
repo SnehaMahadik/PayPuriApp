@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+<RelativeLayout
+    android:background="@color/blue"
+    android:id="@+id/rl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/nav_header_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:gravity="left">
+
+        <ImageView
+
+            android:id="@+id/imageViewUserPic"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_camera"
+            android:scaleType="fitCenter"
+             />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/nav_header_container2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/nav_header_container">
+
+    <TextView
+
+        android:id="@+id/textviewUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="user name"
+        android:textColor="@color/white"
+
+        android:textStyle="bold"
+
+        />
+    <TextView
+
+        android:id="@+id/textviewUserMob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="user name"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@+id/nav_header_container"
+        android:textStyle="bold"
+
+        android:layout_below="@+id/textviewUserName"
+        />
+    </LinearLayout>
+
+   <!-- <TextView
+        android:paddingTop="15dp"
+        android:id="@+id/textviewUserMob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="user name"
+        android:textColor="@color/white"
+        android:layout_below="@+id/textviewUserName"
+        android:layout_toRightOf="@+id/nav_header_container"
+        />-->
+</RelativeLayout>
+<ListView
+    android:paddingTop="10dp"
+    android:id="@+id/ldrawerList" android:layout_height="wrap_content" android:layout_width="match_parent"
+    android:layout_below="@id/rl"
+    android:listSelector="@drawable/listitem_selector"></ListView>
+
+
+
+
+</RelativeLayout>

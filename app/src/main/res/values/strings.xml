@@ -1,0 +1,166 @@
+<resources>
+    <string name="app_name">PayPuri</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">Select Menu</string>
+    <string name="drawer_close">PayPuri</string>
+
+    <string name="tab_delivered">Delivered</string>
+    <string name="tab_pending">Pending</string>
+    <string name="tab_returns">Returns</string>
+    <string name="tab_all">All</string>
+    <string name="tab_merchants">Merchants</string>
+    <string name="tab_personal">Personal</string>
+
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_friends">Friends</string>
+    <string name="nav_item_notifications">Messages</string>
+
+
+    <string name="title_messages">Messages</string>
+    <string name="title_friends">Friends</string>
+    <string name="title_home">Home</string>
+    <string name="title_activity_user_registration">UserRegistrationActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="str_enter_mobile">Enter the mobile number</string>
+    <string name="str_continue">Continue</string>
+    <string name="str_you_will_shortly_receive">You will shortly receive OTP on your mobile.</string>
+    <string name="str_regenerate_otp">Re-generate OTP</string>
+    <string name="str_enter_six_digit_otp">Enter  6 digit OTP we sent to</string>
+    <string name="str_otp">Enter OTP</string>
+
+    <string name="gcm_defaultSenderId">993184104117</string>
+
+    <string-array name="arrayGridItemIcon">
+        <item>@drawable/cod</item>
+        <item>@drawable/quickpay</item>
+        <item>@drawable/qrkie</item>
+        <item>@drawable/utilities</item>
+
+    </string-array>
+
+    <string-array name="arrayGridItemText">
+        <item>Pay on Delivery</item>
+        <item>Quick Pay</item>
+        <item>QR Scan</item>
+        <item>Payments Utilities</item>
+
+    </string-array>
+
+    <!-- account names array -->
+
+
+    <string-array name="array_accountname">
+
+        <item>@string/HDFC</item>
+
+        <item>@string/HSBC</item>
+
+        <item>@string/ICICI</item>
+
+        <item>@string/SARSWAT</item>
+
+        <item>@string/AXIS</item>
+
+    </string-array>
+
+    <string name="HDFC">HDFC BANK- XXXXXXXX5377 - SB</string>
+
+    <string name="HSBC">HSBC BANK - XXXXXXXX7398 - CA</string>
+
+    <string name="ICICI">ICICI BANK - XXXXXXXX4638 - SB</string>
+
+    <string name="SARSWAT">SARSWAT BANK - XXXXXX4638 - SB</string>
+
+    <string name="AXIS">AXIS - XXXXXXXX4638 - SB</string>
+
+    <string name="HDFC_BANK">HDFC BANK</string>
+
+    <string name="HSBC_BANK">HSBC BANK</string>
+
+    <string name="ICICI_BANK">ICICI BANK</string>
+
+    <string name="SARSWAT_BANK">SARSWAT BANK</string>
+
+    <string name="AXI_BANK">AXIS BANK</string>
+
+
+    <string name="nav_item_transaction_history">Transaction History</string>
+
+    <string name="nav_item_change_mpin">Change MPIN</string>
+
+    <string name="nav_item_bank_preference">Bank Preference</string>
+
+    <string name="nav_item_settings">Settings</string>
+
+    <string name="nav_item_about_us">About Us</string>
+
+    <string name="nav_item_contact_us">Contact Us</string>
+
+    <string name="nav_item_share_app">Share App</string>
+
+    <string name="nav_item_rate_us">Rate Us</string>
+
+    <string name="nav_item_report">Report Bug</string>
+
+    <string name="nav_item_feedback">Send us feedback</string>
+
+    <string name="str_order_no">Order No</string>
+
+    <string name="str_total_amount">Total Amount</string>
+
+
+    <string-array name="nav_drawer_labels">
+
+        <item>@string/nav_item_transaction_history</item>
+
+        <item>@string/nav_item_change_mpin</item>
+
+        <item>@string/nav_item_bank_preference</item>
+
+        <item>@string/nav_item_settings</item>
+
+        <item>@string/nav_item_about_us</item>
+
+        <item>@string/nav_item_contact_us</item>
+
+        <item>@string/nav_item_share_app</item>
+
+        <item>@string/nav_item_rate_us</item>
+
+        <item>@string/nav_item_report</item>
+
+        <item>@string/nav_item_feedback</item>
+
+    </string-array>
+
+    <string name="symbol_rupee">\u20B9</string>
+    <!--Group Item-->
+    <string name="ExpectedDeliveryDate">Expected Delivery Date</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <!--About Us-->
+    <string name="version">Version :1.1</string>
+    <string name="cashless">Cashless Technologies Ltd.</string>
+    <string name="followus">Follow us on</string>
+    <string name="tnc">Terms n Conditions</string>
+    <string name="privacy_policy">Privacy Policy</string>
+
+    <string name="privacy_policy_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_change_password">ChangePasswordActivity</string>
+
+    <string name="hint_name">Full Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="err_msg_name">Enter your full name</string>
+    <string name="err_msg_email">Enter valid email address</string>
+    <string name="err_msg_password">Password does not matched!</string>
+    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
+    <string name="forgot_password_text">Please enter your email id to continue.  You will recieve an email containing instructions for chnaging your password</string>
+    <string name="title_activity_change_mpin">ChangeMPINActivity</string>
+
+</resources>

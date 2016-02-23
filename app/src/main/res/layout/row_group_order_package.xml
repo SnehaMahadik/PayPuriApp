@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LLGroup"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/material_grey_100">
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    >
+
+    <CheckBox
+        android:id="@+id/checkboxGroupItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+        android:text="Not yet  "
+        android:padding="2dp"
+    android:id="@+id/textViewPacketId"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/textSizeSmall"
+    android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/checkboxGroupItem"/>
+
+    <TextView
+        android:padding="2dp"
+        android:id="@+id/textViewAmountPayable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="500000"
+        android:textSize="@dimen/textSizeSmall"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_alignParentRight="true"/>
+    <TextView
+        android:padding="2dp"
+        android:layout_toRightOf="@+id/checkboxGroupItem"
+        android:layout_below="@+id/textViewAmountPayable"
+        android:id="@+id/textViewExpectedDeliveryDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSizeSmall"
+        android:text="@string/ExpectedDeliveryDate"
+        android:textColor="@color/black" />
+
+
+
+</RelativeLayout>
+
+
+</LinearLayout>

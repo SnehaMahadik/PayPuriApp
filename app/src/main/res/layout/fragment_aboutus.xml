@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mastek.paypuriapp.fragments.AboutusFragment"
+    android:layout_gravity="center"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@color/yellow"/>
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/version"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeSmall"/>
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cashless"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeMedium"/>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:padding="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/tnc"/>
+        <TextView
+            android:id="@+id/textViewTermsnConditions"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tnc"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/textSizeSmall"
+       />
+        </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal">
+        <ImageView
+
+            android:padding="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/tnc"/>
+        <TextView
+
+            android:id="@+id/textViewPrivacyPolicy"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_policy"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/textSizeSmall"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:paddingTop="50dp"
+        android:layout_gravity="bottom|center_horizontal"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/followus"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeSmall"/>
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:padding="5dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/fb"/>
+        <ImageView
+            android:padding="5dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/twitter"/>
+        <ImageView
+            android:padding="5dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/google_plus"/>
+
+    </LinearLayout>
+
+</LinearLayout>
