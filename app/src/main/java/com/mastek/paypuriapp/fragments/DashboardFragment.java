@@ -1,14 +1,11 @@
 package com.mastek.paypuriapp.fragments;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Base64;
-import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +14,6 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -26,16 +22,14 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.mastek.paypuriapp.MainActivity;
 import com.mastek.paypuriapp.R;
 import com.mastek.paypuriapp.adapters.GridAdapter;
 import com.mastek.paypuriapp.interfaces.DashboardFragmentListener;
-import com.mastek.paypuriapp.models.GetAllTransactionHistory;
+import com.mastek.paypuriapp.interfaces.NetworkReceiver;
 import com.mastek.paypuriapp.models.GridItems;
-import com.mastek.paypuriapp.network.requestbuilder.AllTransactionHistoryRequestBuilder;
-import com.mastek.paypuriapp.network.requestbuilder.CommonRequestBuilder;
+import com.mastek.paypuriapp.network.NetworkCall;
 import com.mastek.paypuriapp.utils.FlipAnimation;
 
 import org.json.JSONException;
@@ -48,7 +42,7 @@ import java.util.Map;
 /**
  *
  */
-public class DashboardFragment extends Fragment implements AdapterView.OnItemClickListener,View.OnClickListener {
+public class DashboardFragment extends Fragment implements AdapterView.OnItemClickListener,View.OnClickListener ,NetworkReceiver{
     private ArrayList<GridItems> mGridItemsArrayList = null;
     private GridItems gridItems;
     private DashboardFragmentListener dashboardFragmentListener;
@@ -58,6 +52,7 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
     private GridAdapter mGridAdapter;
     private Context mContext;
     JSONObject jsonobject_one;
+    private NetworkCall mNetworkCall;
 
     public DashboardFragment() {
         // Required empty public constructor
@@ -224,9 +219,10 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
     public void onResume() {
         super.onResume();
        // postJson();
+        makeNetworkCall();
         // Creating request and fetch Orders list
 
-       StringRequest stringRequest = new StringRequest(Request.Method.POST, " http://192.168.2.176:8080/upiproxy/getAccountBalance/12340987",
+       /*StringRequest stringRequest = new StringRequest(Request.Method.POST, " http://192.168.2.176:8080/upiproxy/getAccountBalance/12340987",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -262,7 +258,7 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
 
         };
         RequestQueue requestQueue1 = Volley.newRequestQueue(getActivity());
-        requestQueue1.add(stringRequest);
+        requestQueue1.add(stringRequest);*/
 
        /* StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.2.176:8080//appUsers",
                 new Response.Listener<String>() {
@@ -326,6 +322,50 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
         requestQueue1.add(stringRequest);*/
     }
 
+    private void makeNetworkCall() {
+
+        mNetworkCall.getJsonData("http://192.168.2.176:8080/upiproxy/getAccountBalance/12340987",1);
+
+
+        /*StringRequest stringRequest = new StringRequest(Request.Method.POST, " http://192.168.2.176:8080/upiproxy/getAccountBalance/12340987",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(getActivity(),response,Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getActivity(),error.toString(),Toast.LENGTH_LONG).show();
+                        Log.e("Volley Error ::", "Failed" + error.toString());
+                    }
+                }){
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("USERNAME","ganesh");
+                params.put("PASSWORD","ganesh");
+
+
+
+
+
+                return params;
+            }
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/json; charset=utf-8");
+                headers.put("Authorization", "Basic Z2FuZXNoOmdhbmVzaA==");
+                return headers;
+            }
+
+        };
+        RequestQueue requestQueue1 = Volley.newRequestQueue(getActivity());
+        requestQueue1.add(stringRequest);*/
+    }
+
     private void postJson() {
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("username","sneha");
@@ -370,7 +410,18 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
         RequestQueue requestQueue1 = Volley.newRequestQueue(getActivity());
 
         requestQueue1.add(req);
-    }}
+    }
+
+    @Override
+    public <T> void onResponse(T obj, int tag) {
+       // mNetworkCall.showToast(obj.toString());
+    }
+
+    @Override
+    public void onError(int error_code, int tag, Object object) {
+
+    }
+}
 
    /* @Override
     public void onErrorResponse(VolleyError error) {
