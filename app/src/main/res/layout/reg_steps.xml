@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
+        android:layout_weight="7"
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:id="@+id/dot1"
+            android:layout_width="@dimen/circle_size"
+            android:layout_height="@dimen/circle_size"
+            android:background="@drawable/circlegrey"
+            android:gravity="center"
+            android:layerType="software" />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="30dp"
+            android:layout_height="2dp"
+            android:background="@color/grey"
+            android:layerType="software" />
+
+        <TextView
+            android:id="@+id/dot2"
+            android:layout_width="@dimen/circle_size"
+            android:layout_height="@dimen/circle_size"
+            android:background="@drawable/circlegrey"
+            android:gravity="center"
+            android:layerType="software" />
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="30dp"
+            android:layout_height="2dp"
+            android:background="@color/grey"
+            android:layerType="software" />
+
+        <TextView
+            android:id="@+id/dot3"
+            android:layout_width="@dimen/circle_size"
+            android:layout_height="@dimen/circle_size"
+            android:background="@drawable/circlegrey"
+            android:gravity="center"
+            android:layerType="software" />
+
+        <View
+            android:id="@+id/line3"
+            android:layout_width="30dp"
+            android:layout_height="2dp"
+            android:background="@color/grey"
+            android:layerType="software" />
+
+        <TextView
+            android:id="@+id/dot4"
+            android:layout_width="@dimen/circle_size"
+            android:layout_height="@dimen/circle_size"
+            android:background="@drawable/circlegrey"
+            android:gravity="center"
+            android:layerType="software" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="false">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="1/4"
+            android:id="@+id/tvProgress"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="20dp" />
+    </LinearLayout>
+
+</LinearLayout>
