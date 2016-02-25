@@ -34,7 +34,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerInParent="true"
                     android:textSize="@dimen/textSizeLarge"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/colorPrimary"
                     android:text="COD Payments"
                     android:textStyle="bold"
                     />
@@ -70,7 +70,7 @@
                 app:tabMode="fixed"
                 android:layout_gravity="center"
                 app:tabIndicatorColor="@color/yellow"
-                app:tabBackground="@color/blue"/>
+                app:tabBackground="@color/colorPrimary"/>
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v4.view.ViewPager

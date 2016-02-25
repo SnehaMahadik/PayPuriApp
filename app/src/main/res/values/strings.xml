@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PayPuri</string>
+    <string name="app_name">BeNow</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -162,5 +162,70 @@
     <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
     <string name="forgot_password_text">Please enter your email id to continue.  You will recieve an email containing instructions for chnaging your password</string>
     <string name="title_activity_change_mpin">ChangeMPINActivity</string>
+
+
+    <!--Group Item-->
+    <string name="_enter_registration_info">Enter Registration Information</string>
+    <string name="str_enter_referal_code">Enter Referral Code (If Any)</string>
+    <string name="str_your_email">Your Email  ID</string>
+    <string name="str_password">Password (Alphanumeric)</string>
+    <string name="str_next">Next</string>
+
+    <!-- Direct Scan Qr code Strings-->
+
+    <string name="title_activity_invoice_details">Invoice Details</string>
+    <string name="str_your_easy">Your easy,safe,secure payment gateway</string>
+    <string name="str_pay_from">Pay from :</string>
+    <string name="str_select_bank">Select Bank Account</string>
+    <string name="str_view_invoice_details">View Invoice Details</string>
+    <string name="str_confirm_fragment">Confirm Payment</string>
+    <string name="str_proceed">Proceed</string>
+    <string name="pay_puri">PayPuri</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="str_address_info">Address Information</string>
+    <string name="str_payment_information">Payment Information</string>
+
+
+    <string name="rupee">\u20B9</string>
+    <string name="str_order_date">Order Date :</string>
+    <string name="str_order_total">Order Total :</string>
+    <string name="str_national_pci">National Payments \n Corporation Of India</string>
+    <string name="str_please_authorize">Please authorize your transaction</string>
+    <string name="str_enter_mpin">Enter MPIN</string>
+    <string name="str_submit">SUBMIT</string>
+    <string name="str_dont_have_mpin">Don\'t have MPIN? <u>Generate Here</u></string>
+    <string name="str_dont_share_mpin">MPIN is highly confidential, Do not share it with anyone.</string>
+    <string name="str_payment_success">Payment Successful</string>
+    <string name="str_your_payment_went">We\'ve sent you an email with your receipt.</string>
+    <string name="str_payer_mobile">Payer mobile no.</string>
+    <string name="str_order_number">Order no.</string>
+    <string name="str_payer_account">Payer account no.</string>
+    <string name="str_total_amount_paid">Total Amount Paid :</string>
+    <string name="str_close">Close</string>
+    <string name="str_view_acc_bal">View A/c Balance</string>
+    <string name="str_amount_payable">Amount Payable :</string>
+    <string name="product_summary">Product Summary</string>
+    <string name="str_product_name">Chronograph Watch for Men</string>
+    <string name="str_product_company">by Tommy Hilfiger</string>
+    <string name="str_pay_to">Pay :</string>
+    <string name="err_valid_mobile_no">Please enter valid mobile number.</string>
+    <string name="str_mobile_no">Mobile No.</string>
+    <string name="str_valid_otp">Please enter valid OTP.</string>
+    <string name="str_by_registering"><![CDATA[ By registering, you agree to our \n Terms of Service & Privacy Policy]]></string>
+    <string name="err_username_already_available">Username already available.</string>
+    <string name="err_valid_otp">Wrong OTP</string>
+    <string name="str_done">Done</string>
+    <string name="str_select_prefferd_bank" >Select Preferred Bank Account</string>
+    <string name="err_valid_id">Id can\'t be empty.</string>
+    <string name="err_password_empty">Password can not be empty.</string>
+    <string name="err_valid_email">Please enter valid email Id.</string>
+    <string name="str_user_id">UserID@PayPuri.com</string>
+    <string name="str_yor_default_bank">Your Default Bank Account</string>
+    <string name="str_change">(Change)</string>
+    <string name="str_for_this_transaction">(for this transaction)</string>
+    <string name="str_transaction_details">Transaction Details</string>
+    <string name="str_payee_details">Payee Details</string>
+    <string name="str_okay">Okay!</string>
+    <string name="str_invite_to_friends">Invite Friends to PayPuri</string>
 
 </resources>

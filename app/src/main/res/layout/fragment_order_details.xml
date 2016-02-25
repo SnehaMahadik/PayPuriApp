@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mastek.paypuriapp.fragments.OrderDetailsFragment"
+    tools:context="com.benow.benow.fragments.OrderDetailsFragment"
     android:background="@color/white">
 
 
@@ -94,7 +94,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:background="@color/blue"
+            android:background="@color/colorPrimary"
             android:padding="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

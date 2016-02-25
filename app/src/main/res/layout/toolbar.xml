@@ -4,8 +4,8 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="8dp"
-    android:background="@color/blue"
+
+    android:background="@color/colorPrimary"
     android:layout_gravity="center_horizontal"
 
     >
@@ -16,7 +16,7 @@
 
         >
 
-    <TextView
+    <!--<TextView
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,8 +24,20 @@
 
         android:id="@+id/toolbar_title"
         android:textSize="@dimen/textSizeLarge"
-        android:textStyle="bold"/>
-        
+        android:textStyle="bold"/>-->
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/benow_logo"/>
+        <ImageView
+           android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_notifications_white_24dp"/>
+
 
     </RelativeLayout>
 </android.support.v7.widget.Toolbar>

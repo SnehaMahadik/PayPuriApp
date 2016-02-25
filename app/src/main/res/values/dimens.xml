@@ -18,5 +18,7 @@
     <dimen name="textSizeLarge">22sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+    <dimen name="circle_size">28dp</dimen>
+    <dimen name="line_size">2dp</dimen>
 
 </resources>
