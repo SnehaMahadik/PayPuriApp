@@ -5,7 +5,9 @@ import android.content.Context;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.benow.fragments.OrderListFragment;
+import com.benow.models.GetAllOrdersResponse;
 import com.benow.models.GetAllTransactionHistory;
+import com.benow.models.Order;
 import com.benow.network.Constants;
 import com.benow.network.CustomVolleyRequestQueue;
 import com.benow.network.GsonRequestBuilder;
@@ -31,7 +33,7 @@ public class OrderListRequestBuilder {
 
     // Get all orders from web services and return a result to order list fragment
     public void getAllOrders(OrderListFragment orderListFragment) {
-        gsonRequestBuilder = new GsonRequestBuilder<>(Constants.BASE_URL , Request.Method.GET,GetAllTransactionHistory.class, null,null, orderListFragment,orderListFragment);
+        gsonRequestBuilder = new GsonRequestBuilder<>(Constants.BASE_URL+Constants.ALL_ORDERS_URL , Request.Method.POST,GetAllOrdersResponse.class, null,null, orderListFragment,orderListFragment);
 
         mQueue.add(gsonRequestBuilder);
     }

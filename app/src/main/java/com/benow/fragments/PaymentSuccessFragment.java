@@ -49,17 +49,28 @@ public class PaymentSuccessFragment extends Fragment {
         tvAmountPaid = (TextView) view.findViewById(R.id.tvAmountPaid);
         btnClose = (Button) view.findViewById(R.id.btnClose);
 
-        tvAccountNo.setText(""+bundle.getString("bank"));
-        tvOrderNo.setText(""+bundle.getString("orderno"));
-        tvMobileNo.setText("9898989898");
-        tvAmountPaid.setText(getString(R.string.rupee) + " " + bundle.getString("amount"));
+        if (bundle.containsKey("orderno")) {
+
+            tvAccountNo.setText("" + bundle.getString("bank"));
+            tvOrderNo.setText("" + bundle.getString("orderno"));
+            tvMobileNo.setText("9898989898");
+            tvAmountPaid.setText(getString(R.string.rupee) + " " + bundle.getString("amount"));
+        }
+        else {
+            tvAccountNo.setText("ICICI Bank");
+           // tvOrderNo.setText("" + bundle.getString("orderno"));
+            tvMobileNo.setText(bundle.getString("mobileNumber"));
+            tvAmountPaid.setText(getString(R.string.rupee) + " " + bundle.getString("PEER_Amount"));
+            tvOrderNo.setText("" + bundle.getString("Transaction_no"));
+
+        }
 
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager().beginTransaction().remove(PaymentSuccessFragment.this).commit();
-                ((MainActivity)getActivity()).clearBackstack();
-             //   ((MainActivity)getActivity()).launchBarcodeScanner();
+                ((MainActivity) getActivity()).clearBackstack();
+                //   ((MainActivity)getActivity()).launchBarcodeScanner();
                 DashboardFragment newFragment = new DashboardFragment();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.container, newFragment);

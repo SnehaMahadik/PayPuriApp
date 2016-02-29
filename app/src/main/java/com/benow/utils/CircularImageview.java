@@ -12,9 +12,10 @@ import com.squareup.picasso.Transformation;
  * Created by sneha13498 on 2/13/2016.
  */
 public class CircularImageview {
+    private Context mContext;
 
-    public static void makeCircularImage(ImageView ivLogo,Context mContext) {
-        mContext = ivLogo.getContext();
+    public static void makeCircularImage(ImageView ivLogo, Context mContext, String uri) {
+
 
         // ----------------------------------------------------------------
         // apply rounding to image
@@ -29,7 +30,7 @@ public class CircularImageview {
                 .build();
 
         Picasso.with(mContext)
-                .load("http://www.nextbigwhat.com/wp-content/uploads/2013/09/Flipkart-Native-APp.png")
+                .load(uri)
 
                 .resize(250,250)
                 .transform(transformation)

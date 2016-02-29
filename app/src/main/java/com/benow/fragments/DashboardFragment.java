@@ -211,7 +211,7 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
 
                 break;
             case 1:
-                fragmentTransaction.replace(R.id.container, new InboxFragment());
+                fragmentTransaction.replace(R.id.container, new QuickPayFragment());
                 fragmentTransaction.addToBackStack("");
                 fragmentTransaction.commit();
                 break;

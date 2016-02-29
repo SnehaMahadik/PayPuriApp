@@ -47,7 +47,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.Cust
         holder.textViewpurchasedate.setText("Order Date : "+order.getOrderDate());
        // holder.textViewdeliverydate.setText("ETA: "+order.getDeliveryDate());
         holder.textViewdeliverydate.setText("ETA: 2 Days");
-        CircularImageview.makeCircularImage(holder.ivLogo, mContext);
+        CircularImageview.makeCircularImage(holder.ivLogo, mContext,"http://www.nextbigwhat.com/wp-content/uploads/2013/09/Flipkart-Native-APp.png");
      //   Picasso.with(mContext).load("http://static.dnaindia.com/sites/default/files/2015/09/22/378260-flipkart-twitter.png").resize(150, 150).placeholder(R.mipmap.ic_launcher).into(holder.ivLogo);
     }
 

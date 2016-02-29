@@ -1,7 +1,10 @@
 package com.benow.models;
 
 
-public class PeerContact {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class PeerContact implements Parcelable {
 
     private Integer id;
     private String contactName;
@@ -124,4 +127,50 @@ public class PeerContact {
         this.appUserId = appUserId;
     }
 
+
+    protected PeerContact(Parcel in) {
+        id = in.readByte() == 0x00 ? null : in.readInt();
+        contactName = in.readString();
+        mobileNumber = in.readString();
+        mmid = in.readString();
+        accountNumber = in.readString();
+        ifscCode = in.readString();
+        contactType = in.readString();
+        appUserId = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        if (id == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeInt(id);
+        }
+        dest.writeString(contactName);
+        dest.writeString(mobileNumber);
+        dest.writeString(mmid);
+        dest.writeString(accountNumber);
+        dest.writeString(ifscCode);
+        dest.writeString(contactType);
+        dest.writeString(appUserId);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<PeerContact> CREATOR = new Parcelable.Creator<PeerContact>() {
+        @Override
+        public PeerContact createFromParcel(Parcel in) {
+            return new PeerContact(in);
+        }
+
+        @Override
+        public PeerContact[] newArray(int size) {
+            return new PeerContact[size];
+        }
+    };
 }

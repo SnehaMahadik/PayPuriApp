@@ -67,7 +67,7 @@ public class OrderDetailsFragment extends Fragment {
         expListView = (ExpandableListView) view.findViewById(R.id.elvPackages);
         mTextviewOrderId= (TextView) view.findViewById(R.id.tvOrderNo);
         mImageViewVendor= (ImageView) view.findViewById(R.id.ivLogo);
-        CircularImageview.makeCircularImage(mImageViewVendor, getContext());
+        CircularImageview.makeCircularImage(mImageViewVendor, getContext(), "http://www.nextbigwhat.com/wp-content/uploads/2013/09/Flipkart-Native-APp.png");
 
 
         // preparing list data

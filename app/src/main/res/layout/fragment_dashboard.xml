@@ -63,7 +63,7 @@ android:orientation="vertical"
                     android:layout_alignParentTop="true"
                     android:textSize="@dimen/textSizeLarge"
                     android:textColor="@color/colorPrimary"
-                    android:text="&#xE87C;"
+                    android:text="Ganesh Ghag"
                     android:textStyle="bold"
                     />
                 <!--<TextView
@@ -181,9 +181,10 @@ android:layout_below="@+id/llUser"
         </LinearLayout>
     <!--</LinearLayout>-->
     <LinearLayout
-        android:layout_above="@+id/llBottom"
+
         android:id="@+id/llGridview"
         android:layout_below="@+id/LLSwipe"
+android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -206,7 +207,9 @@ android:layout_below="@+id/llUser"
     </LinearLayout>
 
 
-    <!--End Swipe for balance-->
+    <!--End Swipe for balance
+
+     android:layout_above="@+id/llBottom"-->
 
 
     <!--<GridView
@@ -224,7 +227,7 @@ android:layout_below="@+id/llUser"
 -->
      <!-- </LinearLayout>-->
 
-
+<!--
 <LinearLayout
     android:id="@+id/llBottom"
     android:padding="10dp"
@@ -253,6 +256,6 @@ android:layout_below="@+id/llUser"
 
         />
 
-</LinearLayout>
+</LinearLayout>-->
 
 </RelativeLayout>

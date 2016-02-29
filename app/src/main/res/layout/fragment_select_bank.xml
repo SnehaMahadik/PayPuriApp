@@ -8,9 +8,10 @@
     <!-- TODO: Update blank fragment layout -->
 
     <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,9 +41,17 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="150dp"
+                    android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/amazonicon"
+                    android:src="@drawable/user"
+                    android:layout_margin="5dp" />
+                <TextView
+                    android:id="@+id/textViewPayee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_pay_to"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"
                     android:layout_margin="5dp" />
             </LinearLayout>
 
@@ -51,10 +60,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:text="@string/str_amount_payable"
+                android:text="Enter Transaction Amount"
                 android:layout_marginTop="10dp" />
 
-            <TextView
+           <!-- <TextView
                 android:id="@+id/tvAmountPayable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -65,16 +74,30 @@
                 android:gravity="center"
                 android:text=" 800"
                 android:textSize="50sp"
-                android:textStyle="bold" />
+                android:textStyle="bold" />-->
+            <EditText
+                android:id="@+id/tvAmountPayable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+android:drawableLeft="@drawable/ic_create_black_24dp"
+                android:gravity="center"
+                android:text=" 800"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:inputType="number"/>
 
-            <TextView
+
+           <!-- <TextView
                 android:id="@+id/btnInvoiceDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/str_view_invoice_details"
                 android:textColor="@color/colorPrimary"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp" />-->
 
             <View
                 android:layout_width="match_parent"
@@ -82,7 +105,7 @@
                 android:background="@android:drawable/divider_horizontal_textfield"
                 android:layout_marginTop="20dp" />
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -100,21 +123,21 @@
                     android:text="@string/str_change"
                     android:textColor="@color/colorPrimary"
                     android:layout_marginTop="20dp" />
-            </LinearLayout>
+            </LinearLayout>-->
 
 
-            <LinearLayout
+          <!--  <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/bg_squre_shadow">
-
+                android:background="@drawable/bg_squre_shadow">-->
+<!--
                 <Spinner
                     android:id="@+id/spBanks"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"/>-->
                <!-- <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -133,31 +156,31 @@
                     android:layout_gravity="center_vertical"
                     android:gravity="center_vertical"
                     android:textColor="@color/black" />-->
-            </LinearLayout>
+           <!-- </LinearLayout>-->
 
-            <TextView
+            <EditText
                 android:id="@+id/tvShowBal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/str_view_acc_bal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="30dp"
+                android:text="Message"
                 android:textColor="@color/colorPrimary"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:background="@android:color/transparent"/>
 
         </LinearLayout>
     </ScrollView>
 
     <Button
         android:id="@+id/btnConfirmPayment"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
+        android:layout_gravity="bottom"
+
         android:textColor="@color/white"
         android:background="@color/colorPrimary"
         android:text="@string/str_proceed"
         android:textStyle="bold" />
+
 
 </LinearLayout>

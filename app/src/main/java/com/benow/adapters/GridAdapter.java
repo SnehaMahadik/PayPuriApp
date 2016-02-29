@@ -57,7 +57,7 @@ public class GridAdapter extends BaseAdapter {
             // get layout from grid_item.xml ( Defined Below )
 
             gridView = inflater.inflate( R.layout.grid_item , null);
-            gridView.setLayoutParams(new AbsListView.LayoutParams(width,height));
+            gridView.setLayoutParams(new AbsListView.LayoutParams(width,width));
 
             // set value into textview
 

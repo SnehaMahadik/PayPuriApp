@@ -10,7 +10,12 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
+    <provider
+        android:name="com.identifier.gamecenterapp.contentprovider."
+        android:authorities="com.identifier.gamecenterapp.contentprovider"
+        android:exported="true" />
 
     <!-- [START gcm_receiver] -->
     <receiver
@@ -53,7 +58,6 @@
         android:allowBackup="true"
         android:icon="@drawable/benow2"
         android:label="@string/app_name"
-
         android:theme="@style/MyMaterialTheme.Base">
 
         <!--
@@ -65,8 +69,7 @@
         </activity>
         -->
         <activity
-            android:name="com.benow.activity.MainActivity"
-
+            android:name=".activity.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -74,30 +77,36 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity
+        <!--
+            <activity
             android:name="com.benow.activity.MainActivity"
             android:label="@string/title_activity_splash"
-            android:theme="@style/MyMaterialTheme.Base" />-->
-        <activity android:name="com.benow.activity.TermsnConditionsActivity" />
+            android:theme="@style/MyMaterialTheme.Base" />
+        -->
+        <activity android:name=".activity.TermsnConditionsActivity" />
         <activity
-            android:name="com.benow.activity.SettingsActivity"
+            android:name=".activity.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:theme="@style/MyMaterialTheme.Base" />
         <activity
-            android:name="com.benow.activity.ChangePasswordActivity"
+            android:name=".activity.ChangePasswordActivity"
             android:label="@string/title_activity_change_password"
             android:theme="@style/MyMaterialTheme.Base" />
         <activity
-            android:name="com.benow.activity.ForgotPasswordActivity"
+            android:name=".activity.ForgotPasswordActivity"
             android:label="@string/title_activity_forgot_password"
             android:theme="@style/MyMaterialTheme.Base" />
         <activity
-            android:name="com.benow.activity.ChangeMPINActivity"
+            android:name=".activity.ChangeMPINActivity"
             android:label="@string/title_activity_change_mpin"
-            android:theme="@style/MyMaterialTheme.Base"></activity>
+            android:theme="@style/MyMaterialTheme.Base" />
         <activity
-            android:name="com.benow.activity.MobileRegistrationActivity"
+            android:name=".activity.MobileRegistrationActivity"
             android:label="@string/title_activity_change_mpin"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.CreateNewUserActivity"
+            android:label="@string/title_activity_create_new_user"
             android:theme="@style/MyMaterialTheme.Base"></activity>
     </application>
 

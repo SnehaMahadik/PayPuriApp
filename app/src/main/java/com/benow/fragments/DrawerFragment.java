@@ -281,7 +281,7 @@ public class DrawerFragment extends Fragment implements AdapterView.OnItemClickL
 
         items.add(new DrawerHeaderItem("Help and Support"));
         items.add(new DrawerChildItems("About us",R.drawable.ic_about_us));
-        items.add(new DrawerChildItems("Contact us", R.drawable.ic_contact_us));
+        items.add(new DrawerChildItems("QuickPayPhoneContact us", R.drawable.ic_contact_us));
         items.add(new DrawerChildItems("FAQs", R.drawable.ic_faq));
 
         items.add(new DrawerHeaderItem("Show your love"));

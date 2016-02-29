@@ -13,6 +13,10 @@
     <string name="tab_all">All</string>
     <string name="tab_merchants">Merchants</string>
     <string name="tab_personal">Personal</string>
+    <string name="tab_QuickpayContacts">BeNow Contacts</string>
+    <string name="tab_others">Others</string>
+    <string name="tab_MMID">MMID</string>
+    <string name="tab_IFCS">IFCS CODE</string>
 
     <string name="nav_item_home">Home</string>
     <string name="nav_item_friends">Friends</string>
@@ -215,7 +219,7 @@
     <string name="err_username_already_available">Username already available.</string>
     <string name="err_valid_otp">Wrong OTP</string>
     <string name="str_done">Done</string>
-    <string name="str_select_prefferd_bank" >Select Preferred Bank Account</string>
+    <string name="str_select_prefferd_bank">Select Preferred Bank Account</string>
     <string name="err_valid_id">Id can\'t be empty.</string>
     <string name="err_password_empty">Password can not be empty.</string>
     <string name="err_valid_email">Please enter valid email Id.</string>
@@ -227,5 +231,7 @@
     <string name="str_payee_details">Payee Details</string>
     <string name="str_okay">Okay!</string>
     <string name="str_invite_to_friends">Invite Friends to PayPuri</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_create_new_user">CreateNewUserActivity</string>
 
 </resources>
