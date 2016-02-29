@@ -138,7 +138,8 @@ public class MpinFragment extends Fragment implements View.OnClickListener,Respo
             transaction.replace(R.id.container, newFragment, "PaymentSuccessFragment");
             transaction.commit();
 
-        } catch (JSONException e) {
+        } catch (JSONException e)
+        {
             e.printStackTrace();
         }
 
