@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.benow.R;
 import com.benow.fragments.OrderListFragment;
 import com.benow.fragments.QuickPayContactsFragment;
+import com.benow.interfaces.OrderListClickListener;
 import com.benow.models.PeerContact;
 import com.benow.models.QuickPayPhoneContact;
 import com.google.android.gms.plus.model.people.Person;
@@ -32,7 +33,7 @@ public class QuickPayContactsListAdapter extends RecyclerView.Adapter<QuickPayCo
     String imnage;
     Cursor phonesCursor;
     Person.Urls urls;
-    private QuickPayContactsFragment orderListClickListener;
+    private OrderListClickListener orderListClickListener;
 
 
     public QuickPayContactsListAdapter(Context mContext, List<String> mobileNumbersUsingApp, ArrayList<QuickPayPhoneContact> mContacts) {
@@ -56,25 +57,25 @@ public class QuickPayContactsListAdapter extends RecyclerView.Adapter<QuickPayCo
     @Override
     public void onBindViewHolder(QuickPayContactsListAdapter.ContactsListView holder, int position) {
        // QuickPayContacts mQuickPayContacts = mContacts.get(position);
-
+/*
         if (mMobileNumbersUsingApp.contains(mContacts.get(position).getMobileNo()))
-        {
-            holder.mTextViewContactName.setText(mContacts.get(position).getContactName()+"  yes");
+        {*/
+            holder.mTextViewContactName.setText(mContacts.get(position).getContactName());
             holder.mTextViewContactNo.setText(mContacts.get(position).getMobileNo());
 
 
            // holder.imageViewContactPic.setImageBitmap(pic());
             //CircularImageview.makeCircularImage(holder.imageViewContactPic, mContext, (mContacts.get(position).getMobileNo()));
 
-            holder.imageViewStatus.setVisibility(View.VISIBLE);
-        }
-        else {
+           // holder.imageViewStatus.setVisibility(View.VISIBLE);
+      //  }
+        /*else {
 
             holder.mTextViewContactName.setText(mContacts.get(position).getContactName());
             holder.mTextViewContactNo.setText(mContacts.get(position).getMobileNo());
 
             holder.imageViewStatus.setVisibility(View.GONE);
-        }
+        }*/
 
 
 

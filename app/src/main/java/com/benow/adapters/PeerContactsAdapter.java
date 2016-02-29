@@ -11,6 +11,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.benow.R;
+import com.benow.fragments.QuickPayContactsFragment;
+import com.benow.fragments.QuickPayOthersFragment;
+import com.benow.interfaces.OrderListClickListener;
 import com.benow.models.PeerContact;
 import com.benow.models.QuickPayPhoneContact;
 import com.benow.utils.CircularImageview;
@@ -22,7 +25,7 @@ import java.util.List;
 /**
  * Created by sneha13498 on 2/26/2016.
  */
-public class PeerContactsAdapter extends RecyclerView.Adapter<PeerContactsAdapter.ContactsListView>  {
+public class PeerContactsAdapter extends RecyclerView.Adapter<PeerContactsAdapter.ContactsListView> {
 
     private Context mContext;
     private List<String> mMobileNumbersUsingApp;
@@ -33,6 +36,7 @@ public class PeerContactsAdapter extends RecyclerView.Adapter<PeerContactsAdapte
     Person.Urls urls;
     private List<PeerContact> mPeerContactList;
     private String mBankImageUrl,mMobileImageUrl;
+    private OrderListClickListener orderListClickListener;
 
 
     public PeerContactsAdapter(Context mContext, List<String> mobileNumbersUsingApp, ArrayList<QuickPayPhoneContact> mContacts) {
@@ -86,6 +90,15 @@ public class PeerContactsAdapter extends RecyclerView.Adapter<PeerContactsAdapte
         return mPeerContactList.size();
     }
 
+    public void setOnOrderListClickListener(QuickPayOthersFragment mQuickPayOthersFragment){
+        try {
+            orderListClickListener = mQuickPayOthersFragment;
+        } catch (ClassCastException e)
+        {
+            throw new ClassCastException(mContext.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
 
 
     public class ContactsListView extends RecyclerView.ViewHolder implements View.OnClickListener
@@ -108,7 +121,7 @@ public class PeerContactsAdapter extends RecyclerView.Adapter<PeerContactsAdapte
 
         @Override
         public void onClick(View v) {
-            // orderListClickListener.onOrderListClick(getAdapterPosition());
+             orderListClickListener.onOrderListClick(getAdapterPosition());
         }
     }
 }

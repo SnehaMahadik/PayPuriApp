@@ -1,46 +1,113 @@
 
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="info.androidhive.fab.MainActivity">
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context="com.benow.benow.fragments.OrderListFragment">
 
-    <!--<view
-        android:id="@+id/recycler_view"
-        class="android.support.v7.widget.RecyclerView"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true" />-->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical" />
+        android:background="@color/white"
+        tools:context="com.benow.benow.fragments.OrderListFragment"
+        android:orientation="vertical">
+
+        <!--<view
+            android:id="@+id/recycler_view"
+            class="android.support.v7.widget.RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />-->
+
+        <LinearLayout
+            android:id="@+id/llIFSC"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:indeterminate="true"/>
+            <ImageView
+                android:id="@+id/imageViewContactPic"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_domain_black_24dp"
 
-</RelativeLayout>
+                />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_input_add" />
-</android.support.design.widget.CoordinatorLayout>
+            <TextView
+                android:id="@+id/textViewContactName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:padding="10dp"
+                android:text="Add Beneficiary with IFSC code"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSizeSmall" />
+        </LinearLayout>
+        <View
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:background="@android:color/darker_gray"
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:padding="5dp"/>
+
+
+        <LinearLayout
+            android:padding="10dp"
+            android:id="@+id/llMMID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_stay_primary_portrait_black_24dp"
+
+                />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Add Beneficiary with MMID"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSizeSmall" />
+        </LinearLayout>
+        <View
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:background="@android:color/darker_gray"
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:padding="5dp"/>
+
+        <TextView
+            android:gravity="center_horizontal"
+android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Added Beneficiaries"
+            android:textColor="@color/black"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:paddingTop="15dp"
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll"
+            android:scrollbars="vertical" />
+
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+
+    </LinearLayout>
+

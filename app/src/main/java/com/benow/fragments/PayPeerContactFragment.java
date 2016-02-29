@@ -29,7 +29,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 
-public class PayPeerContactFragment extends Fragment implements View.OnClickListener,Response.Listener, Response.ErrorListener {
+public class PayPeerContactFragment extends Fragment implements View.OnClickListener, Response.Listener, Response.ErrorListener {
 
     private Context mContext;
     private Activity mActivity;
@@ -48,6 +48,7 @@ public class PayPeerContactFragment extends Fragment implements View.OnClickList
     private ProgressBar mProgressbar;
     private JSONObject jsonObjpeerContact;
     Bundle mBundlePeerPayment;
+    private Bundle args;
 
 
     public PayPeerContactFragment() {
@@ -68,21 +69,21 @@ public class PayPeerContactFragment extends Fragment implements View.OnClickList
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_select_bank, container, false);
 
-      //  btnViewInvoiceDetails = (TextView) view.findViewById(R.id.btnInvoiceDetails);
-        tvPayeeName= (TextView) view.findViewById(R.id.textViewPayee);
+        //  btnViewInvoiceDetails = (TextView) view.findViewById(R.id.btnInvoiceDetails);
+        tvPayeeName = (TextView) view.findViewById(R.id.textViewPayee);
         btnConfirmPayment = (Button) view.findViewById(R.id.btnConfirmPayment);
         tvAmountPayable = (EditText) view.findViewById(R.id.tvAmountPayable);
-      //  tvShowBalance = (TextView) view.findViewById(R.id.tvShowBal);
-      //  tvChangeBank = (TextView) view.findViewById(R.id.tvChangeAccount);
+        //  tvShowBalance = (TextView) view.findViewById(R.id.tvShowBal);
+        //  tvChangeBank = (TextView) view.findViewById(R.id.tvChangeAccount);
         btnConfirmPayment.setOnClickListener(this);
 //        btnViewInvoiceDetails.setOnClickListener(this);
-      //  mSpinner = (Spinner) view.findViewById(R.id.spBanks);
-       // tvAmountPayable.setText(getString(R.string.rupee) + " " + strAmount);
+        //  mSpinner = (Spinner) view.findViewById(R.id.spBanks);
+        // tvAmountPayable.setText(getString(R.string.rupee) + " " + strAmount);
         //tvShowBalance.setOnClickListener(this);
-       // tvChangeBank.setOnClickListener(this);
+        // tvChangeBank.setOnClickListener(this);
 
-     //   mProgressbar = (ProgressBar) view.findViewById(R.id.progress_bar);
-     //   mProgressbar.setVisibility(View.VISIBLE);
+        //   mProgressbar = (ProgressBar) view.findViewById(R.id.progress_bar);
+        //   mProgressbar.setVisibility(View.VISIBLE);
 
         return view;
     }
@@ -90,7 +91,7 @@ public class PayPeerContactFragment extends Fragment implements View.OnClickList
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-mContext=context;
+        mContext = context;
     }
 
     @Override
@@ -98,53 +99,72 @@ mContext=context;
         super.onDetach();
 
     }
+
     @Override
     public void onResume() {
         super.onResume();
         mActivity = getActivity();
-        Bundle args = getArguments();
+        args = getArguments();
         if (args != null) {
-            mQuickPayContacts= args.getParcelable("CONTACT_DETAILS");
-            mContacts= args.getParcelableArrayList("PHONE_CONTACTS");
-            position= args.getInt("POSITION");
-            tvPayeeName.setText(mContacts.get(position).getContactName());
+            mQuickPayContacts = args.getParcelable("CONTACT_DETAILS");
+            mContacts = args.getParcelableArrayList("PHONE_CONTACTS");
+            position = args.getInt("POSITION");
+
+            if (args.containsKey("PEER_CONTACTS")) {
+                tvPayeeName.setText(mQuickPayContacts.getPeerContacts().get(position).getContactName());
+            } else {
+                tvPayeeName.setText(mContacts.get(position).getContactName());
+            }
 
         }
-
     }
 
     @Override
     public void onClick(View v) {
-        int id=v.getId();
-        switch (id)
-        {
+        int id = v.getId();
+        switch (id) {
             case R.id.btnConfirmPayment:
 
-                mBundlePeerPayment=new Bundle();
-                
+                mBundlePeerPayment = new Bundle();
+
                 mBundlePeerPayment.putString("PEER_Amount", tvAmountPayable.getText().toString());
-                mBundlePeerPayment.putString("PEER_PAYEE_NAME", mContacts.get(position).getContactName());
+                if (args.containsKey("PEER_CONTACTS")) {
+                    tvPayeeName.setText(mQuickPayContacts.getPeerContacts().get(position).getContactName());
+                    mBundlePeerPayment.putString("PEER_PAYEE_NAME", mQuickPayContacts.getPeerContacts().get(position).getContactName());
+                    mBundlePeerPayment.putString("contactName", mQuickPayContacts.getPeerContacts().get(position).getContactName());
+                    if (mQuickPayContacts.getPeerContacts().get(position).getContactType().equalsIgnoreCase("Mobile")) {
+                        mBundlePeerPayment.putString("mobileNumber", mQuickPayContacts.getPeerContacts().get(position).getMobileNumber());
+                    } else {
+                        mBundlePeerPayment.putString("accountNumber", mQuickPayContacts.getPeerContacts().get(position).getIfscCode());
+                    }
+                } else {
+                    tvPayeeName.setText(mContacts.get(position).getContactName());
+                    mBundlePeerPayment.putString("PEER_PAYEE_NAME", mContacts.get(position).getContactName());
+                    mBundlePeerPayment.putString("contactName", mContacts.get(position).getContactName());
+                    mBundlePeerPayment.putString("mobileNumber", mContacts.get(position).getMobileNo());
+                    mBundlePeerPayment.putString("accountNumber", "");
+                }
+
                 mBundlePeerPayment.putInt("mpin", 12234);
                 mBundlePeerPayment.putString("contactAppUserId", "");
                 mBundlePeerPayment.putString("appUserId", "ganesh");
                 mBundlePeerPayment.putString("id", "1");
-                mBundlePeerPayment.putString("contactName", mContacts.get(position).getContactName());
-                mBundlePeerPayment.putString("mobileNumber", mContacts.get(position).getMobileNo());
+
                 mBundlePeerPayment.putString("mmid", "76272634g");
-                mBundlePeerPayment.putString("accountNumber", "");
+
                 mBundlePeerPayment.putString("ifscCode", "");
                 mBundlePeerPayment.putString("contactType", "Mobile");
                 mBundlePeerPayment.putString("appUserId", "ganesh");
 
                 ProceedToMPIN(mBundlePeerPayment);
 
-               // PaytoPeerContact();
+                // PaytoPeerContact();
         }
 
     }
 
     private void ProceedToMPIN(Bundle mBundlePeerPayment) {
-        MpinFragment mpinFragment = new MpinFragment ();
+        MpinFragment mpinFragment = new MpinFragment();
         mpinFragment.setArguments(mBundlePeerPayment);
 
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
@@ -154,8 +174,7 @@ mContext=context;
         fragmentTransaction.commit();
     }
 
-    private void PaytoPeerContact()
-    {
+    private void PaytoPeerContact() {
 
         /*try {
 

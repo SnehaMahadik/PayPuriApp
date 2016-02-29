@@ -32,7 +32,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         setSupportActionBar(mToolBar);
 
         mToolBar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
-        getSupportActionBar().setTitle("Chnage Password");
+        getSupportActionBar().setTitle("Change Password");
 
         mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,17 +73,14 @@ public class ChangePasswordActivity extends AppCompatActivity {
      * Validating form
      */
     private void submitForm() {
-        /*if (!validateName()) {
+        if (!validateOldPassword()) {
             return;
         }
 
-        if (!validateEmail()) {
-            return;
-        }*/
         if (!ValidateConfirmPassword()) {
             return;
         }
-        if (!validatePassword()) {
+        if (!validateNewPassword()) {
             return;
         }
 
@@ -104,10 +101,21 @@ public class ChangePasswordActivity extends AppCompatActivity {
         return true;
     }
 
-    private boolean validateName() {
+    private boolean validateOldPassword() {
         if (inputOldPassword.getText().toString().trim().isEmpty()) {
-            inputLayoutOldPassword.setError(getString(R.string.err_msg_name));
+            inputLayoutOldPassword.setError("Please enter your old password");
             requestFocus(inputOldPassword);
+            return false;
+        } else {
+            inputLayoutOldPassword.setErrorEnabled(false);
+        }
+
+        return true;
+    }
+    private boolean validateNewPassword() {
+        if (inputNewPassword.getText().toString().trim().isEmpty()) {
+            inputLayoutNewPassword.setError("Please enter password");
+            requestFocus(inputNewPassword);
             return false;
         } else {
             inputLayoutOldPassword.setErrorEnabled(false);
@@ -168,13 +176,13 @@ public class ChangePasswordActivity extends AppCompatActivity {
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             switch (view.getId()) {
                 case R.id.edtOldPassword:
-                    validatePassword();
+                    validateOldPassword();
                     break;
                 case R.id.edtConfirmPassword:
                     ValidateConfirmPassword();
                     break;
                 case R.id.edtNewPassword:
-                    validatePassword();
+                    validateNewPassword();
                     break;
             }
         }

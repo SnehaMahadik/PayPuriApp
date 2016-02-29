@@ -39,7 +39,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class QuickPayContactsFragment extends Fragment implements Response.Listener, Response.ErrorListener,OrderListClickListener {
+public class QuickPayContactsFragment extends Fragment implements OrderListClickListener {
     private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
     private Context mContext;
     private Activity mActivity;
@@ -49,6 +49,7 @@ public class QuickPayContactsFragment extends Fragment implements Response.Liste
     private Gson gson;
     private String json;
     private QuickPayContacts mQuickPayContacts;
+    private ArrayList<QuickPayPhoneContact> mFilteredQuickPayContacts;
     private ArrayList<QuickPayPhoneContact> mContacts;
     private FragmentTransaction fragmentTransaction;
 
@@ -99,7 +100,22 @@ public class QuickPayContactsFragment extends Fragment implements Response.Liste
         if (args != null) {
             mQuickPayContacts= args.getParcelable("CONTACT_DETAILS");
             mContacts= args.getParcelableArrayList("PHONE_CONTACTS");
-            QuickPayContactsListAdapter mQuickPayContactsListAdapter = new QuickPayContactsListAdapter(mContext, mQuickPayContacts.getMobileNumbersUsingApp(), mContacts);
+
+            mFilteredQuickPayContacts=new ArrayList<QuickPayPhoneContact>();
+
+           // mQuickPayContacts = (QuickPayContacts) response;
+            for (int i=0;i<mContacts.size();i++)
+            {
+
+                if (mQuickPayContacts.getMobileNumbersUsingApp().contains(mContacts.get(i).getMobileNo()))
+                {
+                    mFilteredQuickPayContacts.add(mContacts.get(i));
+                }
+            }
+
+
+
+            QuickPayContactsListAdapter mQuickPayContactsListAdapter = new QuickPayContactsListAdapter(mContext, mQuickPayContacts.getMobileNumbersUsingApp(), mFilteredQuickPayContacts);
              mQuickPayContactsListAdapter.setOnOrderListClickListener(this);
             mRecyclerView.setAdapter(mQuickPayContactsListAdapter);
             mProgressbar.setVisibility(View.GONE);
@@ -227,7 +243,7 @@ public class QuickPayContactsFragment extends Fragment implements Response.Liste
     }
 
 
-    @Override
+    /*@Override
     public void onErrorResponse(VolleyError error) {
         mProgressbar.setVisibility(View.GONE);
         Log.i("Error", error.toString());
@@ -235,15 +251,30 @@ public class QuickPayContactsFragment extends Fragment implements Response.Liste
     }
 
     @Override
+    public void onOrderListClick(int position) {
+
+    }*/
+
+    /*@Override
     public void onResponse(Object response) {
         mProgressbar.setVisibility(View.GONE);
         Log.i("Success ", response.toString());
 
         if (response instanceof QuickPayContacts) {
+            mFilteredQuickPayContacts=new ArrayList<QuickPayPhoneContact>();
 
             mQuickPayContacts = (QuickPayContacts) response;
+            for (int i=0;i<mContacts.size();i++)
+            {
+
+            if (mQuickPayContacts.getMobileNumbersUsingApp().contains(mContacts.get(i).getMobileNo()))
+            {
+                mFilteredQuickPayContacts.add(mContacts.get(i));
+            }
+            }
+
             //    if(mQuickPayContacts.getMobileNumbersUsingApp().size()> 0) {
-            QuickPayContactsListAdapter mQuickPayContactsListAdapter = new QuickPayContactsListAdapter(mContext, mQuickPayContacts.getMobileNumbersUsingApp(), mContacts);
+            QuickPayContactsListAdapter mQuickPayContactsListAdapter = new QuickPayContactsListAdapter(mContext, mQuickPayContacts.getMobileNumbersUsingApp(), mFilteredQuickPayContacts);
             mQuickPayContactsListAdapter.setOnOrderListClickListener(this);
             mRecyclerView.setAdapter(mQuickPayContactsListAdapter);
             mProgressbar.setVisibility(View.GONE);
@@ -251,7 +282,7 @@ public class QuickPayContactsFragment extends Fragment implements Response.Liste
 
             // }
         }
-    }
+    }*/
 
 
     @Override
@@ -259,8 +290,9 @@ public class QuickPayContactsFragment extends Fragment implements Response.Liste
 
         Bundle args = new Bundle();
         args.putInt("POSITION", position);
-        args.putParcelableArrayList("PHONE_CONTACTS", mContacts);
+        args.putParcelableArrayList("PHONE_CONTACTS", mFilteredQuickPayContacts);
         args.putParcelable("CONTACT_DETAILS", mQuickPayContacts);
+        args.putString("BENOW_CONTACTS", "benowcontacts");
         PayPeerContactFragment mPayPeerContactFragment = new PayPeerContactFragment ();
         mPayPeerContactFragment.setArguments(args);
 

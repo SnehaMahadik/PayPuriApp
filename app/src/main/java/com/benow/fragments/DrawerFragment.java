@@ -272,6 +272,7 @@ public class DrawerFragment extends Fragment implements AdapterView.OnItemClickL
     private ArrayList<DrawerItem> setData() {
         items=new ArrayList<DrawerItem>();
         items.add(new DrawerHeaderItem("Lock App"));
+       // items.add(new DrawerHeaderItem("Dashboard"));
 
         items.add(new DrawerHeaderItem("Accounts"));
         items.add(new DrawerChildItems("Settings",R.drawable.ic_vector_settings));

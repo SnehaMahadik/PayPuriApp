@@ -93,7 +93,7 @@ public class AddwithMMIDFragment extends Fragment implements Response.Listener, 
             jsonObj.put("mmid", inputMMID.getText());
             jsonObj.put("accountNumber","");
             jsonObj.put("ifscCode", "");
-            jsonObj.put("contactType", "BankAccount");
+            jsonObj.put("contactType", "Mobile");
             jsonObj.put("appUserId", "ganesh");
 
             CreateUserRequestBuilder mCreateUserRequestBuilder = new CreateUserRequestBuilder(mContext);
@@ -130,7 +130,7 @@ mContext=context;
         if(response  instanceof CreateUser){
 
             mCreateUser = (CreateUser) response;
-            Toast.makeText(mContext, response.toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Contact Added Successfuly", Toast.LENGTH_SHORT).show();
             /*if(mCreateUser.getOrders().size() > 0) {
                 OrderListAdapter orderListAdapter = new OrderListAdapter(mContext, mCreateUser.getOrders());
                 orderListAdapter.setOnOrderListClickListener(this);

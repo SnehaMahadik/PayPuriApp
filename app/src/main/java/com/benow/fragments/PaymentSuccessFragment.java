@@ -57,7 +57,7 @@ public class PaymentSuccessFragment extends Fragment {
             tvAmountPaid.setText(getString(R.string.rupee) + " " + bundle.getString("amount"));
         }
         else {
-            tvAccountNo.setText("ICICI Bank");
+            tvAccountNo.setText(bundle.getString("accountNumber"));
            // tvOrderNo.setText("" + bundle.getString("orderno"));
             tvMobileNo.setText(bundle.getString("mobileNumber"));
             tvAmountPaid.setText(getString(R.string.rupee) + " " + bundle.getString("PEER_Amount"));

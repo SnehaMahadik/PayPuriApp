@@ -5,13 +5,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -27,6 +30,7 @@ import com.benow.interfaces.OrderListClickListener;
 import com.benow.models.GetAllOrdersResponse;
 import com.benow.models.OrderItemDetail;
 import com.benow.models.QuickPayContacts;
+import com.benow.models.QuickPayPhoneContact;
 import com.benow.network.requestbuilder.OrderListRequestBuilder;
 
 import java.util.ArrayList;
@@ -34,7 +38,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class QuickPayOthersFragment extends Fragment implements OrderListClickListener {
+public class QuickPayOthersFragment extends Fragment implements OrderListClickListener,View.OnClickListener {
 
     private RecyclerView mRecyclerView;
     private ProgressBar mProgressbar;
@@ -45,6 +49,9 @@ public class QuickPayOthersFragment extends Fragment implements OrderListClickLi
     private FloatingActionButton fab;
     private Activity mActivity;
     private QuickPayContacts mQuickPayContacts;
+    LinearLayout llIFSC,llMMID;
+    private FragmentTransaction fragmentTransaction;
+    private ArrayList<QuickPayPhoneContact> mContacts;
 
 
     public QuickPayOthersFragment()
@@ -69,14 +76,19 @@ public class QuickPayOthersFragment extends Fragment implements OrderListClickLi
 
         // Initialize recycler view
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
-        fab = (FloatingActionButton)rootView. findViewById(R.id.fab);
+        llIFSC=(LinearLayout)rootView.findViewById(R.id.llIFSC);
+        llMMID=(LinearLayout)rootView.findViewById(R.id.llMMID);
+
+        llIFSC.setOnClickListener(this);
+        llMMID.setOnClickListener(this);
+        /*fab = (FloatingActionButton)rootView. findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mActivity, CreateNewUserActivity.class);
                startActivity(intent);
             }
-        });
+        });*/
         // use a linear layout manager
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(rootView.getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -110,9 +122,10 @@ public class QuickPayOthersFragment extends Fragment implements OrderListClickLi
         Bundle args = getArguments();
         if (args != null) {
             mQuickPayContacts= args.getParcelable("CONTACT_DETAILS");
+            mContacts= args.getParcelableArrayList("PHONE_CONTACTS");
 
             PeerContactsAdapter mPeerContactsAdapter = new PeerContactsAdapter(mContext, mQuickPayContacts.getPeerContacts());
-            // mQuickPayContactsListAdapter.setOnOrderListClickListener(this);
+    mPeerContactsAdapter.setOnOrderListClickListener(this);
             mRecyclerView.setAdapter(mPeerContactsAdapter);
             mProgressbar.setVisibility(View.GONE);
         }
@@ -120,7 +133,48 @@ public class QuickPayOthersFragment extends Fragment implements OrderListClickLi
 
 
     @Override
-    public void onOrderListClick(int position) {
+    public void onOrderListClick(int position)
+    {
+        Bundle args = new Bundle();
+        args.putInt("POSITION", position);
+        args.putParcelableArrayList("PHONE_CONTACTS", mContacts);
+        args.putParcelable("CONTACT_DETAILS", mQuickPayContacts);
+        args.putString("PEER_CONTACTS", "peercontacts");
+
+
+        PayPeerContactFragment mPayPeerContactFragment = new PayPeerContactFragment ();
+        mPayPeerContactFragment.setArguments(args);
+
+        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+
+        fragmentTransaction.replace(R.id.container, mPayPeerContactFragment);
+        fragmentTransaction.addToBackStack("PayPeerContactFragment");
+        fragmentTransaction.commit();
 
     }
+
+    @Override
+    public void onClick(View v) {
+        int id=v.getId();
+      //  Intent createUserIntent=new Intent(mContext,CreateNewUserActivity.class);
+        switch (id)
+        {
+            case R.id.llIFSC:
+                Changefragment(new AddwithIFSCFragment(),"IFSC");
+                break;
+            case R.id.llMMID:
+                Changefragment(new AddwithMMIDFragment(),"MMID");
+                break;
+        }
+    }
+
+    private void Changefragment(Fragment fragment, String ifsc) {
+        fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.container, fragment);
+        fragmentTransaction.addToBackStack("");
+        fragmentTransaction.commit();
+    }
+
+
+
 }

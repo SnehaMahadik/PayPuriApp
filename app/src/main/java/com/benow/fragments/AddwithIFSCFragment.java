@@ -99,7 +99,7 @@ public class AddwithIFSCFragment extends Fragment implements Response.Listener, 
             jsonObj.put("mmid", "");
             jsonObj.put("accountNumber",inputAccnum.getText());
             jsonObj.put("ifscCode", inputIFSCcode.getText());
-            jsonObj.put("contactType", "Mobile");
+            jsonObj.put("contactType", "BankAccount");
             jsonObj.put("appUserId", "ganesh");
 
             CreateUserRequestBuilder mCreateUserRequestBuilder = new CreateUserRequestBuilder(mContext);
@@ -143,7 +143,7 @@ public class AddwithIFSCFragment extends Fragment implements Response.Listener, 
         if(response  instanceof CreateUser){
 
             mCreateUser = (CreateUser) response;
-            Toast.makeText(mContext, response.toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Contact Added Successfuly", Toast.LENGTH_SHORT).show();
             /*if(mCreateUser.getOrders().size() > 0) {
                 OrderListAdapter orderListAdapter = new OrderListAdapter(mContext, mCreateUser.getOrders());
                 orderListAdapter.setOnOrderListClickListener(this);

@@ -31,8 +31,8 @@ public class TnCRequestBuilder
     public void getTnCURL(QuickPayContactsFragment quickPayContactsFragment, JSONObject stringStringMap) throws JSONException {
 
 
-        GsonRequest gsonRequest = new GsonRequest(Request.Method.POST, Constants.QUICKPAY_CONTACTS_URL, QuickPayContacts.class,stringStringMap,quickPayContactsFragment, quickPayContactsFragment);
-        mQueue.add(gsonRequest);
+        //GsonRequest gsonRequest = new GsonRequest(Request.Method.POST, Constants.QUICKPAY_CONTACTS_URL, QuickPayContacts.class,stringStringMap,quickPayContactsFragment, quickPayContactsFragment);
+        //mQueue.add(gsonRequest);
 
     }
 }

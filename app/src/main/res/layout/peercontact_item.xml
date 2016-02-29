@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
+
     >
 
     <android.support.v7.widget.CardView
@@ -62,7 +62,6 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/textSizeMedium"/>
 
-
                 <TextView
                     android:paddingTop="10dp"
                     android:id="@+id/textViewMobileBank"
@@ -71,11 +70,7 @@
                     android:gravity="center_vertical"
                     android:text="9887676545"
                     android:textColor="@color/black"/>
-
-
             </LinearLayout>
-
-
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>
